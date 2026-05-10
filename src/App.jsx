@@ -12,6 +12,7 @@ import WhatsNew from "./components/WhatsNew";
 import ReadyToRise from "./components/ReadyToRise";
 import Footer from "./components/Footer";
 
+
 function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <>
-      <TopBar />
+     <TopBar />
 
       <MainNavbar setMenuOpen={setMenuOpen} />
 
@@ -31,6 +32,7 @@ function App() {
       <WhatsNew/>
       <ReadyToRise></ReadyToRise>
       <Footer/>
+      
     </>
   );
 }

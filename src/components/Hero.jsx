@@ -112,13 +112,8 @@ const Hero = () => {
       <div className="hero-bottom">
 
         <p>
-          Organic media planners creating,
-          distributing & optimising <br />
-
-          <strong>search-first content</strong>
-
-          {" "}for SEO, Social, PR,
-          Ai and LLM search
+          Organic media planners creating,distributing & optimising  <br />
+          search-first content for SEO, Social, PR, Ai and LLM search
         </p>
 
         <p className="hero-office">
