@@ -395,7 +395,7 @@ color:black;
 /* SERVICE BUTTON */
 
 .service-btn{
-  position:absolute;
+  /* position:absolute; */
 
   bottom:16px;
   left:16px;
@@ -425,6 +425,5 @@ color:black;
 
 .service-btn:hover{
   border-radius:16px;
-
   transform:scale(0.985);
 }

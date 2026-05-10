@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide": "^4.1.4",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.3.0",
     "framer-motion": "^12.38.0",

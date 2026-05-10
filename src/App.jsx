@@ -16,6 +16,7 @@ function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   return (
     <>
       <TopBar />

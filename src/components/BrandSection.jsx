@@ -1,6 +1,13 @@
 import "../styles/brand-section.css";
+  import { Splide, SplideSlide } from '@splidejs/react-splide';
+  import '@splidejs/react-splide/css';
+
+
+
 
 const BrandSection = () => {
+
+ 
 
   return (
 
@@ -12,7 +19,12 @@ const BrandSection = () => {
 
         <p>The agency behind</p>
 
-        <div className="logo-marquee">
+     
+
+
+
+
+ <div className="logo-marquee">
 
           <div className="logo-track">
 
