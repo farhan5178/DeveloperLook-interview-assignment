@@ -10,7 +10,7 @@ const MainNavbar = () => {
   );
 
   return (
-    <header className="main-navbar">
+    <header className="main-navbar ">
 
       {/* LOGO */}
       <div className="logo">
