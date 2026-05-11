@@ -45,10 +45,7 @@ const servicesRight = [
   },
 ];
 
-
-// ANIMATED BUTTON
-
-// SMALLER PREMIUM BUTTON
+/* ================= BUTTON ================= */
 
 const AnimatedButton = ({ text }) => {
   return (
@@ -56,18 +53,18 @@ const AnimatedButton = ({ text }) => {
       className="
         group
         relative
-        h-[50px]
-        px-7
+        h-[52px]
+        px-8
         overflow-hidden
         rounded-full
         hover:rounded-[16px]
         bg-white
         text-black
         transition-all
-        duration-500
+        duration-700
+        ease-out
       "
     >
-
       {/* FIRST TEXT */}
 
       <span
@@ -75,11 +72,12 @@ const AnimatedButton = ({ text }) => {
           flex
           items-center
           gap-1.5
-          text-[16px]
+          text-[15px]
           font-medium
           tracking-[-0.3px]
           transition-all
-          duration-500
+          duration-700
+          ease-out
           group-hover:-translate-y-[220%]
         "
       >
@@ -97,20 +95,20 @@ const AnimatedButton = ({ text }) => {
           flex
           items-center
           gap-1.5
-          text-[16px]
+          text-[15px]
           font-medium
           tracking-[-0.3px]
           -translate-x-1/2
           translate-y-[220%]
           transition-all
-          duration-500
+          duration-700
+          ease-out
           group-hover:-translate-y-1/2
         "
       >
         {text}
         <span>↗</span>
       </span>
-
     </button>
   );
 };
@@ -128,9 +126,11 @@ const ServiceItem = ({ item }) => {
         relative
         overflow-hidden
         rounded-[999px]
+        min-h-[92px]
         cursor-pointer
         transition-all
-        duration-500
+        duration-700
+        ease-out
       "
     >
       {/* BG IMAGE */}
@@ -140,11 +140,12 @@ const ServiceItem = ({ item }) => {
           absolute
           inset-0
           transition-all
-          duration-500
+          duration-700
+          ease-out
           ${
             hovered
               ? "opacity-100 scale-100"
-              : "opacity-0 scale-110"
+              : "opacity-0 scale-105"
           }
         `}
       >
@@ -154,7 +155,7 @@ const ServiceItem = ({ item }) => {
           className="w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
       </div>
 
       {/* CONTENT */}
@@ -175,7 +176,8 @@ const ServiceItem = ({ item }) => {
           className={`
             overflow-hidden
             transition-all
-            duration-500
+            duration-700
+            ease-out
             flex
             items-center
             justify-center
@@ -191,13 +193,14 @@ const ServiceItem = ({ item }) => {
               w-[52px]
               h-[52px]
               rounded-full
-              bg-white
+              bg-white/95
+              backdrop-blur-md
               flex
               items-center
               justify-center
             "
           >
-            <FiArrowUpRight className="text-black text-[24px]" />
+            <FiArrowUpRight className="text-black text-[22px]" />
           </div>
         </div>
 
@@ -205,12 +208,13 @@ const ServiceItem = ({ item }) => {
 
         <h3
           className={`
-            text-[32px] md:text-[48px]
-            leading-[0.95]
-            tracking-[-2px] md:tracking-[-3px]
+            text-[34px] md:text-[44px]
+            leading-[0.92]
+            tracking-[-2px]
             font-medium
             transition-all
-            duration-500
+            duration-700
+            ease-out
             ${
               hovered
                 ? "text-white"
@@ -229,17 +233,17 @@ const ServiceItem = ({ item }) => {
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-[#f5f5f2] px-8 md:px-10 py-20">
+    <section className="w-full bg-[#f5f5f2] px-6 md:px-8 lg:px-10 py-16">
       
       {/* TOP BUTTON */}
 
-      <div className="flex justify-center mb-20">
+      <div className="flex justify-center mb-16">
         <AnimatedButton text="Explore Our Work" />
       </div>
 
       {/* TITLE ROW */}
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mb-6">
         
         {/* LEFT */}
 
@@ -247,10 +251,10 @@ const ServicesSection = () => {
 
           <h2
             className="
-              text-[48px] md:text-[92px]
+              text-[52px] md:text-[82px]
               leading-[0.9]
               font-semibold
-              tracking-[-3px] md:tracking-[-6px]
+              tracking-[-3px] md:tracking-[-5px]
               text-black
             "
           >
@@ -261,19 +265,19 @@ const ServicesSection = () => {
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
             alt=""
             className="
-              w-[48px] h-[48px]
-              md:w-[88px] md:h-[88px]
-              rounded-[12px] md:rounded-[22px]
+              w-[52px] h-[52px]
+              md:w-[82px] md:h-[82px]
+              rounded-[14px] md:rounded-[20px]
               object-cover
             "
           />
 
           <h2
             className="
-              text-[48px] md:text-[92px]
+              text-[52px] md:text-[82px]
               leading-[0.9]
               font-semibold
-              tracking-[-3px] md:tracking-[-6px]
+              tracking-[-3px] md:tracking-[-5px]
               text-black
             "
           >
@@ -290,15 +294,15 @@ const ServicesSection = () => {
 
       {/* LINE */}
 
-      <div className="w-full h-[1px] bg-black/10 mb-8" />
+      <div className="w-full h-[1px] bg-black/5 mb-8" />
 
       {/* SERVICES GRID */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         
         {/* LEFT COLUMN */}
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1">
 
           {servicesLeft.map((item, index) => (
             <div key={index}>
@@ -306,7 +310,7 @@ const ServicesSection = () => {
               <ServiceItem item={item} />
 
               {index !== servicesLeft.length - 1 && (
-                <div className="w-full h-[1px] bg-black/10" />
+                <div className="w-full h-[1px] bg-black/5" />
               )}
 
             </div>
@@ -316,7 +320,7 @@ const ServicesSection = () => {
 
         {/* RIGHT COLUMN */}
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1">
 
           {servicesRight.map((item, index) => (
             <div key={index}>
@@ -324,7 +328,7 @@ const ServicesSection = () => {
               <ServiceItem item={item} />
 
               {index !== servicesRight.length - 1 && (
-                <div className="w-full h-[1px] bg-black/10" />
+                <div className="w-full h-[1px] bg-black/5" />
               )}
 
             </div>

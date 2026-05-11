@@ -111,10 +111,10 @@ const ProjectCard = ({ item, isActive }) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className={`relative w-full rounded-[32px] overflow-hidden bg-[#222] shrink-0 ${isActive ? 'cursor-none' : 'cursor-default'}`}
       style={{ height: `55vh` }}
-      animate={{ 
+      animate={{
         scale: isActive ? 1 : 0.82,
         opacity: isActive ? 1 : 0.35,
         filter: isActive ? "blur(0px)" : "blur(8px)"
@@ -125,10 +125,10 @@ const ProjectCard = ({ item, isActive }) => {
       onMouseEnter={handleMouseEnter}
     >
       {/* BASE IMAGE */}
-      <motion.img 
-        src={item.image} 
-        className="w-full h-full object-cover" 
-        alt={item.title} 
+      <motion.img
+        src={item.image}
+        className="w-full h-full object-cover"
+        alt={item.title}
         loading="lazy"
         variants={{ hover: { opacity: 0, scale: 1.05 } }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -142,7 +142,7 @@ const ProjectCard = ({ item, isActive }) => {
         variants={{ hover: { opacity: 1 } }}
         transition={{ duration: 0.4 }}
       >
-        <motion.h3 
+        <motion.h3
           className="text-[48px] md:text-[64px] leading-[0.95] tracking-[-2px] text-[#111] font-semibold w-[90%]"
           initial={{ y: 20, opacity: 0 }}
           variants={{ hover: { y: 0, opacity: 1 } }}
@@ -153,7 +153,7 @@ const ProjectCard = ({ item, isActive }) => {
       </motion.div>
 
       {/* MAGNETIC CIRCULAR CTA */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-0 z-20 pointer-events-none w-24 h-24 bg-[#abf0d1] rounded-full flex items-center justify-center text-black shadow-2xl"
         style={{ x: springX, y: springY, translateX: "-50%", translateY: "-50%", originX: 0.5, originY: 0.5 }}
         initial={{ scale: 0, opacity: 0 }}
@@ -162,30 +162,30 @@ const ProjectCard = ({ item, isActive }) => {
       >
         <ArrowUpRight className="w-8 h-8" />
       </motion.div>
-      
+
       {/* FLOATING PILL */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-6 md:bottom-8 right-6 md:right-8 backdrop-blur-xl px-5 py-3 rounded-full flex items-center gap-3 shadow-2xl z-30 font-medium border"
         initial={{
           backgroundColor: "rgba(0, 0, 0, 0.5)",
           borderColor: "rgba(255, 255, 255, 0.1)",
           color: "rgba(255, 255, 255, 1)",
         }}
-        animate={{ 
-          opacity: isActive ? 1 : 0, 
+        animate={{
+          opacity: isActive ? 1 : 0,
           scale: isActive ? 1 : 0.9,
           y: isActive ? 0 : 20,
           backgroundColor: "rgba(0, 0, 0, 0.5)",
           borderColor: "rgba(255, 255, 255, 0.1)",
           color: "rgba(255, 255, 255, 1)",
         }}
-        variants={{ 
-          hover: { 
+        variants={{
+          hover: {
             y: -5,
             backgroundColor: "rgba(0, 0, 0, 0.08)",
             borderColor: "rgba(0, 0, 0, 0.1)",
             color: "rgba(17, 17, 17, 1)",
-          } 
+          }
         }}
         transition={{ duration: 0.4 }}
       >
@@ -199,7 +199,7 @@ const ProjectCard = ({ item, isActive }) => {
 
 const FeaturedWork = () => {
   const containerRef = useRef(null);
-  
+
   // Track scroll state
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -221,113 +221,115 @@ const FeaturedWork = () => {
   const itemHeight = 100; // Height of each animated text item
 
   return (
-    <section 
-      ref={containerRef}
-      // On desktop, make it very tall (400vh) to allow scrolling. 
-      // Do NOT use overflow-hidden here, as it breaks sticky positioning.
-      className="bg-[#111] text-white rounded-[40px] px-6 md:px-16 mx-4 md:mx-6 md:h-[400vh] relative"
-    >
-      
-      {/* ================= DESKTOP PINNED VIEWPORT ================= */}
-      <div className="hidden md:flex sticky top-0 h-screen w-full flex-row items-center justify-between overflow-hidden">
-        
-        {/* LEFT COLUMN: TITLE TRACK */}
-        <div className="relative h-full w-[45%] flex flex-col justify-center">
-          
-          <div className="absolute top-[10vh] left-0">
-            <p className="text-[20px] font-medium tracking-tight text-white/80">Featured Work</p>
+    <div className="w-full px-3 md:px-4 flex justify-center">
+      <section
+        ref={containerRef}
+        // On desktop, make it very tall (400vh) to allow scrolling. 
+        // Do NOT use overflow-hidden here, as it breaks sticky positioning.
+        className="bg-[#111] text-white rounded-[40px] p-6 md:p-16 w-full max-w-[1440px] mx-auto md:h-[400vh] relative"
+      >
+
+        {/* ================= DESKTOP PINNED VIEWPORT ================= */}
+        <div className="hidden md:flex sticky top-16 h-[calc(100vh-128px)] w-full flex-row items-center justify-between overflow-hidden">
+
+          {/* LEFT COLUMN: TITLE TRACK */}
+          <div className="relative h-full w-[45%] flex flex-col justify-center">
+
+            <div className="absolute top-10 left-6">
+              <p className="text-[20px] font-medium tracking-tight text-white/80">Featured Work</p>
+            </div>
+
+            <div className="relative h-full w-full">
+              {/* The Animated Text Track */}
+              <motion.div
+                className="absolute left-0 w-full flex flex-col"
+                initial={false}
+                // Translate upwards by itemHeight for each step
+                animate={{ y: `-${activeIndex * itemHeight}px` }}
+                // Position track so the first item naturally sits in the vertical center
+                style={{ top: `calc(50% - ${itemHeight / 2}px)` }}
+                transition={{ type: "spring", stiffness: 150, damping: 25, mass: 0.8 }}
+              >
+                {works.map((item, index) => {
+                  const isActive = index === activeIndex;
+                  return (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col justify-center cursor-pointer"
+                      style={{ height: itemHeight }}
+                      animate={{
+                        opacity: isActive ? 1 : 0.2,
+                        scale: isActive ? 1 : 0.85,
+                        filter: isActive ? "blur(0px)" : "blur(3px)"
+                      }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
+                      <h2 className="text-[72px] leading-[0.9] tracking-[-3px] font-semibold origin-left truncate">
+                        {item.title}
+                      </h2>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            </div>
           </div>
 
-          <div className="relative h-[60vh] w-full">
-            {/* The Animated Text Track */}
-            <motion.div 
+          {/* RIGHT COLUMN: STICKY IMAGE SHOWCASE */}
+          <div className="relative w-[50%] h-full overflow-hidden flex flex-col justify-center mr-[6px]">
+
+            <motion.div
               className="absolute left-0 w-full flex flex-col"
               initial={false}
-              // Translate upwards by itemHeight for each step
-              animate={{ y: `-${activeIndex * itemHeight}px` }}
-              // Position track so the first item naturally sits in the vertical center
-              style={{ top: `calc(50% - ${itemHeight / 2}px)` }}
+              animate={{ y: `-${activeIndex * 61}vh` }} // 55vh height + 6vh gap
+              style={{
+                top: `calc(50% - 27.5vh)`, // Centered vertically (55vh / 2)
+                gap: `6vh`
+              }}
               transition={{ type: "spring", stiffness: 150, damping: 25, mass: 0.8 }}
             >
-              {works.map((item, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <motion.div 
-                    key={index} 
-                    className="flex flex-col justify-center cursor-pointer"
-                    style={{ height: itemHeight }}
-                    animate={{ 
-                      opacity: isActive ? 1 : 0.2,
-                      scale: isActive ? 1 : 0.85,
-                      filter: isActive ? "blur(0px)" : "blur(3px)"
-                    }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                  >
-                    <h2 className="text-[72px] leading-[0.9] tracking-[-3px] font-semibold origin-left truncate">
-                      {item.title}
-                    </h2>
-                  </motion.div>
-                );
-              })}
+              {works.map((item, index) => (
+                <ProjectCard key={index} item={item} isActive={index === activeIndex} />
+              ))}
             </motion.div>
+
           </div>
         </div>
 
-        {/* RIGHT COLUMN: STICKY IMAGE SHOWCASE */}
-        <div className="relative w-[50%] h-[82vh] overflow-hidden flex flex-col justify-center">
-          
-          <motion.div 
-            className="absolute left-0 w-full flex flex-col"
-            initial={false}
-            animate={{ y: `-${activeIndex * 61}vh` }} // 55vh height + 6vh gap
-            style={{ 
-              top: `calc(50% - 27.5vh)`, // Centered vertically (55vh / 2)
-              gap: `6vh` 
-            }}
-            transition={{ type: "spring", stiffness: 150, damping: 25, mass: 0.8 }}
-          >
+        {/* ================= MOBILE LAYOUT (Stacked) ================= */}
+        {/* Absolute positioning inside the section messes up mobile. We need to isolate mobile. */}
+        <div className="md:hidden flex flex-col relative z-10 pb-10">
+          <p className="text-[20px] font-medium mb-10 tracking-tight text-white/80">Featured Work</p>
+
+          <div className="flex flex-col gap-16">
             {works.map((item, index) => (
-              <ProjectCard key={index} item={item} isActive={index === activeIndex} />
-            ))}
-          </motion.div>
+              <div key={index} className="flex flex-col gap-6">
 
-        </div>
-      </div>
+                <h2 className="text-[48px] leading-[0.9] tracking-[-2px] font-semibold">
+                  {item.title}
+                </h2>
 
-      {/* ================= MOBILE LAYOUT (Stacked) ================= */}
-      {/* Absolute positioning inside the section messes up mobile. We need to isolate mobile. */}
-      <div className="md:hidden flex flex-col pt-12 pb-24 relative z-10">
-        <p className="text-[20px] font-medium mb-10 tracking-tight text-white/80">Featured Work</p>
-        
-        <div className="flex flex-col gap-16">
-          {works.map((item, index) => (
-            <div key={index} className="flex flex-col gap-6">
-              
-              <h2 className="text-[48px] leading-[0.9] tracking-[-2px] font-semibold">
-                {item.title}
-              </h2>
-              
-              <div className="relative w-full aspect-square rounded-[24px] overflow-hidden bg-[#222]">
-                <img 
-                  src={item.image} 
-                  className="w-full h-full object-cover" 
-                  alt={item.title} 
-                  loading="lazy"
-                />
-                 
-                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-xl px-4 py-2.5 rounded-full flex items-center gap-2 border border-white/10 text-white font-medium shadow-2xl">
-                  <Search className="w-3.5 h-3.5" />
-                  <span className="text-[14px]">{item.tag}</span>
-                  <TrendingUp className="w-3.5 h-3.5" />
+                <div className="relative w-full aspect-square rounded-[24px] overflow-hidden bg-[#222]">
+                  <img
+                    src={item.image}
+                    className="w-full h-full object-cover"
+                    alt={item.title}
+                    loading="lazy"
+                  />
+
+                  <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-xl px-4 py-2.5 rounded-full flex items-center gap-2 border border-white/10 text-white font-medium shadow-2xl">
+                    <Search className="w-3.5 h-3.5" />
+                    <span className="text-[14px]">{item.tag}</span>
+                    <TrendingUp className="w-3.5 h-3.5" />
+                  </div>
                 </div>
+
               </div>
-
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-    </section>
+      </section>
+    </div>
   );
 };
 
