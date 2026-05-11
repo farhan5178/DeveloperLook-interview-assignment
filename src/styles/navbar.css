@@ -193,14 +193,15 @@ color:black;
 
 /* MEGA MENU */
 
+/* MEGA MENU */
+
 .mega-menu{
   position:fixed;
 
   top:108px;
-  left:50%;
+  left:50vw;
 
-  translate:-50% 0;
-  transform:scale(0.96);
+  transform:translateX(-50%) scale(0.96);
 
   transform-origin:top center;
 
@@ -237,6 +238,7 @@ color:black;
 
   z-index:9999;
 }
+
 .show-menu{
   opacity:1;
 
@@ -244,8 +246,7 @@ color:black;
 
   filter:blur(0px);
 
-  translate:-50% 0;
-  transform:scale(1);
+  transform:translateX(-50%) scale(1);
 }
 
 /* DIFFERENT MENU SIZES */
