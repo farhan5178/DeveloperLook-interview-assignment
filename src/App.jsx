@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-     <TopBar />
+      <TopBar />
 
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
@@ -29,14 +29,14 @@ function App() {
         <MainNavbar setMenuOpen={setMenuOpen} />
         <Hero menuOpen={menuOpen} />
       </div>
-      
-      <BrandSection/>
-      <FeaturedWork/>
-      <ServicesSection/>
-      <WhatsNew/>
+
+      <BrandSection />
+      <FeaturedWork />
+      <ServicesSection />
+      <WhatsNew />
       <ReadyToRise></ReadyToRise>
-      <Footer/>
-      
+      <Footer />
+
     </>
   );
 }
