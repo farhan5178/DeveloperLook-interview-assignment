@@ -1,7 +1,7 @@
 import "../styles/navbar.css";
 import { useState } from "react";
 
-const MainNavbar = () => {
+const MainNavbar = ({ setMenuOpen }) => {
 
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -522,6 +522,17 @@ const MainNavbar = () => {
         <a href="/">Webinar</a>
 
       </nav>
+      {/* MOBILE MENU BUTTON */}
+
+<button
+  className="mobile-menu-btn"
+  onClick={() => setMenuOpen(true)}
+>
+
+  <span></span>
+  <span></span>
+
+</button>
 
       {/* CONTACT BUTTON */}
       <button className="contact-btn">

@@ -198,7 +198,7 @@ color:black;
 .mega-menu{
   position:fixed;
 
-  top:calc(120px + 30px);
+  top:calc(120px + 32px);
   left:50vw;
 
   transform:translateX(-50%) scale(0.96);
@@ -427,4 +427,69 @@ color:black;
 .service-btn:hover{
   border-radius:16px;
   transform:scale(0.985);
+}
+/* MOBILE MENU BUTTON */
+
+.mobile-menu-btn{
+  width:58px;
+  height:58px;
+
+  border:none;
+
+  background:white;
+
+  border-radius:50%;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-direction:column;
+
+  gap:6px;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+
+  transition:all 0.3s ease;
+}
+
+.mobile-menu-btn span{
+  width:22px;
+  height:2px;
+
+  background:black;
+
+  border-radius:999px;
+
+  transition:all 0.3s ease;
+}
+/* MOBILE NAVBAR */
+
+@media (max-width: 1024px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .contact-btn{
+    display:none;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
+  }
+
+  .main-navbar{
+    height:92px;
+
+    padding:0 18px;
+  }
+
+  .logo{
+    font-size:24px;
+  }
+
 }
