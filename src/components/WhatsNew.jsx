@@ -53,13 +53,13 @@ const WhatsNew = () => {
 
       {/* TOP ROW */}
 
-      <div className="flex items-start justify-between mb-10">
+      <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-0 mb-10">
 
         {/* TITLE */}
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
 
-          <h2 className="text-[82px] leading-[0.9] tracking-[-5px] font-semibold text-black">
+          <h2 className="text-[48px] md:text-[82px] leading-[0.9] tracking-[-3px] md:tracking-[-5px] font-semibold text-black">
 
             What's
 
@@ -68,10 +68,10 @@ const WhatsNew = () => {
           <img
             src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
             alt=""
-            className="w-[68px] h-[68px] rounded-[18px] object-cover mt-1"
+            className="w-[48px] h-[48px] md:w-[68px] md:h-[68px] rounded-[12px] md:rounded-[18px] object-cover mt-1"
           />
 
-          <h2 className="text-[82px] leading-[0.9] tracking-[-5px] font-semibold text-black">
+          <h2 className="text-[48px] md:text-[82px] leading-[0.9] tracking-[-3px] md:tracking-[-5px] font-semibold text-black">
 
             New
 
@@ -290,8 +290,8 @@ const WhatsNew = () => {
                 mt-5
                 text-[28px]
                 md:text-[31px]
-                leading-[0.96]
-                tracking-[-2px]
+                leading-[1.1]
+                tracking-[-1px]
                 font-medium
                 text-black
                 max-w-[95%]

@@ -205,9 +205,9 @@ const ServiceItem = ({ item }) => {
 
         <h3
           className={`
-            text-[48px]
+            text-[32px] md:text-[48px]
             leading-[0.95]
-            tracking-[-3px]
+            tracking-[-2px] md:tracking-[-3px]
             font-medium
             transition-all
             duration-500
@@ -239,18 +239,18 @@ const ServicesSection = () => {
 
       {/* TITLE ROW */}
 
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mb-8">
         
         {/* LEFT */}
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3 md:gap-5">
 
           <h2
             className="
-              text-[92px]
+              text-[48px] md:text-[92px]
               leading-[0.9]
               font-semibold
-              tracking-[-6px]
+              tracking-[-3px] md:tracking-[-6px]
               text-black
             "
           >
@@ -261,19 +261,19 @@ const ServicesSection = () => {
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
             alt=""
             className="
-              w-[88px]
-              h-[88px]
-              rounded-[22px]
+              w-[48px] h-[48px]
+              md:w-[88px] md:h-[88px]
+              rounded-[12px] md:rounded-[22px]
               object-cover
             "
           />
 
           <h2
             className="
-              text-[92px]
+              text-[48px] md:text-[92px]
               leading-[0.9]
               font-semibold
-              tracking-[-6px]
+              tracking-[-3px] md:tracking-[-6px]
               text-black
             "
           >
@@ -294,7 +294,7 @@ const ServicesSection = () => {
 
       {/* SERVICES GRID */}
 
-      <div className="grid grid-cols-2 gap-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
         
         {/* LEFT COLUMN */}
 

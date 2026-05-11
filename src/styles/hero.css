@@ -1,3 +1,17 @@
+/* HERO WRAPPER */
+.hero-wrapper {
+  margin: 16px;
+  border-radius: 12px; /* rounded-md style */
+  overflow: hidden;
+  position: relative;
+}
+
+@media(max-width: 768px) {
+  .hero-wrapper {
+    margin: 12px;
+  }
+}
+
 /* HERO SECTION */
 
 .hero-section{
@@ -82,21 +96,21 @@
 }
 
 .hero-awards p{
+  font-size:11px;
+  font-weight:700;
+
+  line-height:1;
+
+  margin-bottom:6px;
+}
+
+.hero-awards h4{
   font-size:12px;
   font-weight:700;
 
   line-height:1;
 
-  margin-bottom:4px;
-}
-
-.hero-awards h4{
-  font-size:14px;
-  font-weight:700;
-
-  line-height:1;
-
-  margin-bottom:16px;
+  margin-bottom:20px;
 }
 
 /* LOGOS */
@@ -104,23 +118,15 @@
 .awards-logos{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:24px;
 
   color:white;
 }
 
-.awards-logos span{
+.award-item{
   font-size:10px;
-  font-weight:600;
-}
-
-.awards-logos span:first-child,
-.awards-logos span:last-child{
-  font-size:30px;
-
-  line-height:1;
-
-  transform:translateY(-3px);
+  font-weight:700;
+  letter-spacing: 0.2px;
 }
 
 /* TITLE */
@@ -134,10 +140,11 @@
 }
 
 .hero-title h1{
-  font-size:150px;
-  font-weight:600;
+  font-size:180px;
+  font-weight:700;
 
-  letter-spacing:-8px;
+  letter-spacing:-10px;
+  line-height:0.85;
 
   color:white;
 }
@@ -147,17 +154,24 @@
 .title-row{
   display:flex;
   align-items:center;
-
+  justify-content:center;
   gap:22px;
 
   margin-top:-4px;
 }
 
-.title-row span{
-  font-size:150px;
-  font-weight:600;
+.category-group{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
 
-  letter-spacing:-8px;
+.title-row span, .category-group span{
+  font-size:180px;
+  font-weight:700;
+
+  letter-spacing:-10px;
+  line-height:0.85;
 
   color:white;
 }
@@ -165,23 +179,24 @@
 /* CENTER IMAGE */
 
 .title-row img{
-  width:140px;
-  height:140px;
+  width:110px;
+  height:110px;
 
-  border-radius:28px;
+  border-radius:24px;
 
   object-fit:cover;
 
-  margin-top:18px;
+  transform: translateY(-10px);
 }
 
 /* SUBTEXT */
 
 .hero-subtext{
-  margin-top:28px;
+  margin-top:20px;
 
-  font-size:28px;
+  font-size:32px;
   font-weight:600;
+  letter-spacing: -1.5px;
 
   color:white;
 }
@@ -205,11 +220,12 @@
 }
 
 .hero-bottom p{
-  font-size:18px;
-  line-height:1.42;
+  font-size:15px;
+  line-height:1.6;
   font-weight:500;
+  letter-spacing: -0.2px;
 
-  max-width:430px;
+  max-width:480px;
 }
 
 .hero-office{
@@ -230,7 +246,7 @@
 @media(max-width:1100px){
 
   .hero-title h1,
-  .title-row span{
+  .title-row span, .category-group span{
     font-size:92px;
   }
 
@@ -239,4 +255,95 @@
     height:95px;
   }
 
+}
+
+@media(max-width:768px){
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 140px;
+    padding-bottom: 40px;
+  }
+
+  .hero-content {
+    margin-top: 0;
+  }
+
+  .hero-title h1,
+  .title-row span, .category-group span {
+    font-size: 64px;
+    letter-spacing: -3.5px;
+  }
+
+  .title-row {
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+
+  .category-group {
+    gap: 12px;
+  }
+
+  .category-group img {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    margin-top: 8px;
+  }
+
+  .title-row img {
+    display: none; /* Hide the top-level one if it somehow leaks */
+  }
+
+  .hero-subtext {
+    font-size: 20px;
+    margin-top: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .hero-awards {
+    margin-bottom: 24px;
+  }
+
+  .hero-awards h4 {
+    margin-bottom: 16px;
+  }
+
+  .awards-logos {
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .award-item {
+    font-size: 9px;
+    text-align: center;
+    max-width: 60px;
+    line-height: 1.1;
+  }
+
+  .hero-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    margin-top: 0;
+    padding: 0 20px;
+  }
+
+  .hero-description-text {
+    display: none;
+  }
+
+  .hero-office {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
 }

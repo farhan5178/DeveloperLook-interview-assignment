@@ -65,17 +65,27 @@ const Hero = () => {
 
   <div className="awards-logos">
 
-    <span>❮</span>
+    <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="white" strokeWidth="1.5">
+       <path d="M12 2C8 10 4 20 12 38M12 2C16 10 20 20 12 38" />
+       <path d="M4 14C8 16 10 12 12 10" />
+       <path d="M20 14C16 16 14 12 12 10" />
+       <path d="M3 24C8 26 10 22 12 20" />
+       <path d="M21 24C16 26 14 22 12 20" />
+    </svg>
 
-    <span>GLOBAL SEARCH AWARDS</span>
+    <span className="award-item">GLOBAL SEARCH AWARDS</span>
 
-    <span>The Drum</span>
+    <span className="award-item">The Drum</span>
 
-    <span>UK Social Media Awards</span>
+    <span className="award-item">UK Social Media Awards</span>
 
-    <span>CONTENT AWARDS</span>
-
-    <span>❯</span>
+    <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="white" strokeWidth="1.5">
+       <path d="M12 2C8 10 4 20 12 38M12 2C16 10 20 20 12 38" />
+       <path d="M4 14C8 16 10 12 12 10" />
+       <path d="M20 14C16 16 14 12 12 10" />
+       <path d="M3 24C8 26 10 22 12 20" />
+       <path d="M21 24C16 26 14 22 12 20" />
+    </svg>
 
   </div>
 
@@ -88,12 +98,14 @@ const Hero = () => {
 
           <div className="title-row">
 
-            <span>Category</span>
+            <div className="category-group">
+              <span>Category</span>
 
-            <img
-              src={images[activeIndex].thumb}
-              alt=""
-            />
+              <img
+                src={images[activeIndex].thumb}
+                alt=""
+              />
+            </div>
 
             <span>Leaders</span>
 
@@ -111,9 +123,9 @@ const Hero = () => {
       {/* BOTTOM */}
       <div className="hero-bottom">
 
-        <p>
-          Organic media planners creating,distributing & optimising  <br />
-          search-first content for SEO, Social, PR, Ai and LLM search
+        <p className="hero-description-text">
+          Organic media planners creating, distributing & optimising  <br />
+          <b>search-first</b> content for SEO, Social, PR, Ai and LLM search
         </p>
 
         <p className="hero-office">

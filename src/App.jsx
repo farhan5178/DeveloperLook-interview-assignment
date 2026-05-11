@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import TopBar from "./components/TopBar";
 import MainNavbar from "./components/MainNavbar";
+import MobileMenu from "./components/MobileMenu";
 import Hero from "./components/Hero";
 import BrandSection from "./components/BrandSection";
 import FeaturedWork from "./components/FeaturedWork";
@@ -22,9 +23,12 @@ function App() {
     <>
      <TopBar />
 
-      <MainNavbar setMenuOpen={setMenuOpen} />
+      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-      <Hero menuOpen={menuOpen} />
+      <div className="hero-wrapper">
+        <MainNavbar setMenuOpen={setMenuOpen} />
+        <Hero menuOpen={menuOpen} />
+      </div>
       
       <BrandSection/>
       <FeaturedWork/>

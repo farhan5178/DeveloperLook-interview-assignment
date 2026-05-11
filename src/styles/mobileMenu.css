@@ -1,0 +1,221 @@
+.mobile-menu-overlay {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 99999;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Header */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  height: 92px;
+  flex-shrink: 0;
+}
+
+.mobile-menu-logo {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.mobile-menu-logo span {
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.mobile-menu-close {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-close svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  stroke-width: 2px;
+}
+
+/* Scrollable Content */
+.mobile-menu-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0px 24px 160px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -1px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mobile-menu-link.no-sub {
+  display: block;
+}
+
+.chevron {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.chevron svg {
+  width: 12px;
+  height: 12px;
+  fill: white;
+}
+
+/* Accordion Submenu */
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-submenu.open {
+  max-height: 500px;
+}
+
+.mobile-submenu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 0 24px 16px;
+}
+
+.mobile-submenu-inner a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.mobile-submenu-inner a:hover {
+  color: white;
+}
+
+.mobile-work-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #B8FFE7;
+  color: #111;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+/* Footer CTA */
+.mobile-menu-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(30,30,30,1) 0%, rgba(30,30,30,0) 100%);
+  pointer-events: none; /* Let clicks pass through gradient */
+}
+
+.mobile-contact-btn {
+  pointer-events: auto; /* Re-enable clicks on button itself */
+  width: 100%;
+  height: 64px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  transition:
+    border-radius 0.35s cubic-bezier(0.76, 0, 0.24, 1),
+    transform 0.3s ease;
+}
+
+.mobile-contact-btn:hover {
+  border-radius: 16px;
+  transform: translateY(-2px) scale(0.985);
+}
+
+.mobile-contact-btn .btn-text-wrapper {
+  height: 24px;
+}
+
+.mobile-contact-btn .btn-text {
+  font-size: 18px;
+  height: 100%;
+}
+
+.mobile-contact-btn:hover .btn-text:first-child {
+  transform: translateY(140%);
+}
+
+.mobile-contact-btn:hover .btn-text:last-child {
+  transform: translateY(100%);
+}

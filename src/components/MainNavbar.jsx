@@ -1,9 +1,24 @@
 import "../styles/navbar.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const MainNavbar = ({ setMenuOpen }) => {
 
   const [activeMenu, setActiveMenu] = useState(null);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = (menu, img) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setActiveMenu(menu);
+    setMenuImage(img);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200);
+  };
 
   const [menuImage, setMenuImage] = useState(
     "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
@@ -23,12 +38,8 @@ const MainNavbar = ({ setMenuOpen }) => {
         {/* SERVICES */}
         <div
           className="nav-item"
-          onMouseEnter={() => {
-            setActiveMenu("services");
-            setMenuImage(
-              "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
-            );
-          }}
+          onMouseEnter={() => handleMouseEnter("services", "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop")}
+          onMouseLeave={handleMouseLeave}
         >
 
           <a
@@ -40,7 +51,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
           <div
             className={`mega-menu ${activeMenu === "services" ? "show-menu" : ""}`}
-            onMouseLeave={() => setActiveMenu(null)}
           >
 
             <div className="mega-left">
@@ -176,28 +186,23 @@ const MainNavbar = ({ setMenuOpen }) => {
             </div>
 
             <div className="mega-right">
+              <div className="mega-img-wrapper">
+                <img
+                  src={menuImage}
+                  alt=""
+                />
+              </div>
 
-              <img
-                src={menuImage}
-                alt=""
-              />
-
-              <button className="service-btn">
-
+              <button className="mega-popup-btn">
                 <div className="btn-text-wrapper">
-
                   <span className="btn-text">
                     View All Services ↗
                   </span>
-
                   <span className="btn-text">
                     View All Services ↗
                   </span>
-
                 </div>
-
               </button>
-
             </div>
 
           </div>
@@ -207,12 +212,8 @@ const MainNavbar = ({ setMenuOpen }) => {
         {/* INDUSTRIES */}
         <div
           className="nav-item"
-          onMouseEnter={() => {
-            setActiveMenu("industries");
-            setMenuImage(
-              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-            );
-          }}
+          onMouseEnter={() => handleMouseEnter("industries", "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop")}
+          onMouseLeave={handleMouseLeave}
         >
 
           <a
@@ -224,7 +225,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
           <div
             className={`mega-menu ${activeMenu === "industries" ? "show-menu" : ""}`}
-            onMouseLeave={() => setActiveMenu(null)}
           >
 
             <div className="single-column">
@@ -246,7 +246,9 @@ const MainNavbar = ({ setMenuOpen }) => {
             </div>
 
             <div className="mega-right">
-              <img src={menuImage} alt="" />
+              <div className="mega-img-wrapper">
+                <img src={menuImage} alt="" />
+              </div>
             </div>
 
           </div>
@@ -256,12 +258,8 @@ const MainNavbar = ({ setMenuOpen }) => {
         {/* INTERNATIONAL */}
         <div
           className="nav-item"
-          onMouseEnter={() => {
-            setActiveMenu("international");
-            setMenuImage(
-              "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop"
-            );
-          }}
+          onMouseEnter={() => handleMouseEnter("international", "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop")}
+          onMouseLeave={handleMouseLeave}
         >
 
           <a
@@ -273,7 +271,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
           <div
             className={`mega-menu ${activeMenu === "international" ? "show-menu" : ""}`}
-            onMouseLeave={() => setActiveMenu(null)}
           >
 
             <div className="single-column">
@@ -337,7 +334,9 @@ const MainNavbar = ({ setMenuOpen }) => {
             </div>
 
             <div className="mega-right">
-              <img src={menuImage} alt="" />
+              <div className="mega-img-wrapper">
+                <img src={menuImage} alt="" />
+              </div>
             </div>
 
           </div>
@@ -347,12 +346,8 @@ const MainNavbar = ({ setMenuOpen }) => {
         {/* ABOUT */}
         <div
           className="nav-item"
-          onMouseEnter={() => {
-            setActiveMenu("about");
-            setMenuImage(
-              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-            );
-          }}
+          onMouseEnter={() => handleMouseEnter("about", "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop")}
+          onMouseLeave={handleMouseLeave}
         >
 
           <a
@@ -364,7 +359,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
           <div
             className={`mega-menu ${activeMenu === "about" ? "show-menu" : ""}`}
-            onMouseLeave={() => setActiveMenu(null)}
           >
 
             <div className="single-column">
@@ -428,7 +422,9 @@ const MainNavbar = ({ setMenuOpen }) => {
             </div>
 
             <div className="mega-right">
-              <img src={menuImage} alt="" />
+              <div className="mega-img-wrapper">
+                <img src={menuImage} alt="" />
+              </div>
             </div>
 
           </div>
@@ -445,12 +441,8 @@ const MainNavbar = ({ setMenuOpen }) => {
         {/* BLOG */}
         <div
           className="nav-item"
-          onMouseEnter={() => {
-            setActiveMenu("blog");
-            setMenuImage(
-              "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
-            );
-          }}
+          onMouseEnter={() => handleMouseEnter("blog", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop")}
+          onMouseLeave={handleMouseLeave}
         >
 
           <a
@@ -462,7 +454,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
           <div
             className={`mega-menu ${activeMenu === "blog" ? "show-menu" : ""}`}
-            onMouseLeave={() => setActiveMenu(null)}
           >
 
             <div className="single-column">
@@ -512,7 +503,9 @@ const MainNavbar = ({ setMenuOpen }) => {
             </div>
 
             <div className="mega-right">
-              <img src={menuImage} alt="" />
+              <div className="mega-img-wrapper">
+                <img src={menuImage} alt="" />
+              </div>
             </div>
 
           </div>

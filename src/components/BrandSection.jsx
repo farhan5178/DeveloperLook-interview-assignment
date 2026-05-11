@@ -99,11 +99,11 @@ const BrandSection = () => {
           <h2 className="brand-heading">
 
             <span className="heading-top">
-              Driving Demand &
+              Driving Demand <span className="desktop-amp">&</span>
             </span>
 
             <div className="discovery-row">
-
+              <span className="mobile-amp">&</span>
               <span>Discovery</span>
 
               <img
@@ -120,11 +120,17 @@ const BrandSection = () => {
           <div className="brand-buttons">
 
             <button className="story-btn">
-              Our Story ↗
+              <div className="btn-text-wrapper">
+                <span className="btn-text">Our Story ↗</span>
+                <span className="btn-text">Our Story ↗</span>
+              </div>
             </button>
 
             <button className="service-btn">
-              Our Services ↗
+              <div className="btn-text-wrapper">
+                <span className="btn-text">Our Services ↗</span>
+                <span className="btn-text">Our Services ↗</span>
+              </div>
             </button>
 
           </div>

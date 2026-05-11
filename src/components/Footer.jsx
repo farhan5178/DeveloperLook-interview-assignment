@@ -10,7 +10,7 @@ const RiseFooter = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
 
           {/* Newsletter & Socials */}
-          <div className="flex-1 max-w-sm">
+          <div className="flex-1 max-w-md">
             <h2 className="text-[26px] md:text-[32px] font-semibold mb-6 tracking-tight">
               Stay updated with Rise news
             </h2>
@@ -73,28 +73,23 @@ const RiseFooter = () => {
         </div>
 
         {/* Huge Logo Section - Pixel Perfect Geometry */}
-        <div className="w-full flex items-end justify-center overflow-hidden pb-8 pt-8">
-          <svg viewBox="0 0 1500 240" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-            {/* "Rise at Seve" Text */}
-            <text x="0" y="200" className="fill-white text-[210px] font-bold tracking-[-0.04em]" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Rise at Seve
-            </text>
-
-            {/* Custom 'n' Arrow/Zigzag Path */}
-            {/* Live site 'N' has NO left vertical bar! Just diagonal from top left to bottom right, then vertical up */}
+        <div className="w-full flex items-baseline justify-center overflow-hidden pb-8 pt-16">
+          <span className="text-white text-[14vw] lg:text-[210px] font-bold tracking-[-0.04em] leading-none whitespace-nowrap">
+            Rise at Seve
+          </span>
+          <svg viewBox="0 0 160 200" className="h-[10vw] lg:h-[150px] ml-2 lg:ml-4 translate-y-[1vw] lg:translate-y-[15px]" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M1260 50 L1420 200 V50"
+              d="M10 10 L130 190 V10"
               stroke="white"
-              strokeWidth="28"
+              strokeWidth="24"
               fill="none"
               strokeLinecap="square"
               strokeLinejoin="miter"
             />
-
-            {/* Registered Symbol (R) */}
-            <circle cx="1470" cy="70" r="24" stroke="white" strokeWidth="5" fill="none" />
-            <text x="1458" y="80" className="fill-white text-[26px] font-bold">R</text>
           </svg>
+          <div className="flex items-start self-start mt-[1vw] lg:mt-[20px] ml-2 lg:ml-4">
+             <span className="text-white text-[2vw] lg:text-[26px] font-bold border-[3px] lg:border-[5px] border-white rounded-full w-[4vw] h-[4vw] lg:w-[48px] lg:h-[48px] flex items-center justify-center">R</span>
+          </div>
         </div>
 
         {/* Bottom Bar */}

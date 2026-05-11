@@ -44,7 +44,7 @@ body{
 .nav-links{
   display:flex;
   align-items:center;
-  gap:42px;
+  gap:24px;
 }
 
 .nav-links a{
@@ -54,10 +54,10 @@ body{
 
   color:white;
 
-  font-size:15px;
-  font-weight:600;
+  font-size:14px;
+  font-weight:700;
 
-  letter-spacing:-0.2px;
+  letter-spacing:-0.4px;
 
   transition:all 0.3s ease;
 }
@@ -86,11 +86,11 @@ body{
 .badge{
   position:absolute;
 
-  top:-18px;
-  right:-18px;
+  top:-10px;
+  right:-16px;
 
-  width:22px;
-  height:22px;
+  width:16px;
+  height:16px;
 
   border-radius:50%;
 
@@ -100,7 +100,8 @@ body{
   align-items:center;
   justify-content:center;
 
-  font-size:11px;
+  font-size:9px;
+  font-weight:700;
   color:#111;
 }
 
@@ -174,12 +175,12 @@ color:black;
 }
 
 .contact-btn:hover .btn-text:first-child,
-.service-btn:hover .btn-text:first-child{
+.mega-popup-btn:hover .btn-text:first-child{
   transform:translateY(140%);
 }
 
 .contact-btn:hover .btn-text:last-child,
-.service-btn:hover .btn-text:last-child{
+.mega-popup-btn:hover .btn-text:last-child{
   transform:translateY(100%);
 }
 
@@ -189,6 +190,7 @@ color:black;
   position:relative;
   display:flex;
   align-items:center;
+  height:120px; /* Full navbar height to bridge the top gap */
 }
 
 /* MEGA MENU */
@@ -237,6 +239,15 @@ color:black;
     0 2px 10px rgba(0,0,0,0.04);
 
   z-index:9999;
+}
+
+.mega-menu::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: 60px;
 }
 
 .show-menu{
@@ -360,49 +371,38 @@ color:black;
 .mega-right{
   width:360px;
   height:340px;
-
   position:relative;
-
   flex-shrink:0;
+  transition: width 0.35s ease, height 0.35s ease;
+}
 
-  overflow:hidden;
-
-  border-radius:20px;
-
-  transition:
-    width 0.35s ease,
-    height 0.35s ease;
+.mega-img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .mega-right img{
   width:100%;
   height:100%;
-
   object-fit:cover;
-
   border-radius:20px;
-
   display:block;
-
-  transition:
-    transform 0.45s ease,
-    opacity 0.3s ease;
+  transition: transform 0.45s ease, opacity 0.3s ease;
 }
 
 .mega-right:hover img{
   transform:scale(1.03);
 }
 
-/* SERVICE BUTTON */
-
-.service-btn{
-  /* position:absolute; */
-
-  bottom:16px;
-  left:16px;
-
+.mega-popup-btn{
+  position:absolute;
+  z-index: 10;
+  bottom:20px;
+  left:50%;
+  transform: translateX(-50%);
   border:none;
-
   background:black;
   color:white;
 
@@ -424,9 +424,9 @@ color:black;
     transform 0.3s ease;
 }
 
-.service-btn:hover{
+.mega-popup-btn:hover{
   border-radius:16px;
-  transform:scale(0.985);
+  transform: translateX(-50%) scale(0.985);
 }
 /* MOBILE MENU BUTTON */
 
