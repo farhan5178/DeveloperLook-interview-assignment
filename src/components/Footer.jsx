@@ -6,10 +6,8 @@ const RiseFooter = () => {
     <footer className="bg-[#111111] text-white px-6 md:px-10 pt-16 pb-6 rounded-t-[34px] font-sans mx-2 md:mx-4 mb-2 md:mb-4">
       <div className="max-w-[1500px] mx-auto">
 
-        {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
 
-          {/* Newsletter & Socials */}
           <div className="flex-1 max-w-md">
             <h2 className="text-[26px] md:text-[32px] font-semibold mb-6 tracking-tight">
               Stay updated with Rise news
@@ -28,7 +26,6 @@ const RiseFooter = () => {
               </button>
             </div>
 
-            {/* Social Icons */}
             <div className="flex flex-wrap gap-2.5">
               {[
                 { id: 'f', content: 'f' },
@@ -47,7 +44,6 @@ const RiseFooter = () => {
             </div>
           </div>
 
-          {/* Nav Links - Exact Spacing */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 lg:gap-x-24 gap-y-4 text-[18px] md:text-[20px] font-medium tracking-tight">
             <div className="space-y-3.5">
               <a href="#" className="block hover:text-[#DCF9EF] transition-colors">Services</a>
@@ -72,7 +68,6 @@ const RiseFooter = () => {
           </div>
         </div>
 
-        {/* Huge Logo Section - Pixel Perfect Geometry */}
         <div className="w-full flex items-baseline justify-center overflow-hidden pb-8 pt-16">
           <span className="text-white text-[14vw] lg:text-[210px] font-bold tracking-[-0.04em] leading-none whitespace-nowrap">
             Rise at Seve
@@ -92,7 +87,6 @@ const RiseFooter = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-[11px] text-white/80 tracking-wide gap-4 border-t border-white/10 pt-6">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
             <span>© 2025 Rise at Seven Ltd. All rights reserved</span>

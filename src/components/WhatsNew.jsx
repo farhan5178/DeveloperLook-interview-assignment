@@ -79,28 +79,6 @@ const WhatsNew = () => {
 
         </div>
 
-        {/* BUTTON */}
-
-        <button className="group relative overflow-hidden h-[44px] px-6 rounded-full bg-white text-black text-[14px] font-medium transition-all duration-500 hover:rounded-2xl">
-
-          <span className="relative block h-[18px] overflow-hidden">
-
-            <span className="block transition-transform duration-500 group-hover:-translate-y-full">
-
-              Explore More Thoughts ↗
-
-            </span>
-
-            <span className="absolute left-0 top-full block transition-transform duration-500 group-hover:-translate-y-full">
-
-              Explore More Thoughts ↗
-
-            </span>
-
-          </span>
-
-        </button>
-
       </div>
 
       {/* LINE */}

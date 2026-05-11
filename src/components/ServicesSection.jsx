@@ -1,343 +1,114 @@
-// src/components/ServicesSection.jsx
-
 import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
-/* ================= DATA ================= */
-
-const servicesLeft = [
-  {
-    title: "Digital PR",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop",
-  },
-
-  {
-    title: "Search & Growth Strategy",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-  },
-
-  {
-    title: "Data & Insights",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-  },
-];
-
-const servicesRight = [
-  {
-    title: "Organic Social & Content",
-    image:
-      "https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop",
-  },
-
-  {
-    title: "Content Experience",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-  },
-
-  {
-    title: "Onsite SEO",
-    image:
-      "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=1200&auto=format&fit=crop",
-  },
-];
-
-/* ================= BUTTON ================= */
-
 const AnimatedButton = ({ text }) => {
   return (
-    <button
-      className="
-        group
-        relative
-        h-[52px]
-        px-8
-        overflow-hidden
-        rounded-full
-        hover:rounded-[16px]
-        bg-white
-        text-black
-        transition-all
-        duration-700
-        ease-out
-      "
-    >
-      {/* FIRST TEXT */}
-
-      <span
-        className="
-          flex
-          items-center
-          gap-1.5
-          text-[15px]
-          font-medium
-          tracking-[-0.3px]
-          transition-all
-          duration-700
-          ease-out
-          group-hover:-translate-y-[220%]
-        "
-      >
-        {text}
-        <span>↗</span>
-      </span>
-
-      {/* SECOND TEXT */}
-
-      <span
-        className="
-          absolute
-          left-1/2
-          top-1/2
-          flex
-          items-center
-          gap-1.5
-          text-[15px]
-          font-medium
-          tracking-[-0.3px]
-          -translate-x-1/2
-          translate-y-[220%]
-          transition-all
-          duration-700
-          ease-out
-          group-hover:-translate-y-1/2
-        "
-      >
-        {text}
-        <span>↗</span>
-      </span>
+    <button className="contact-btn shadow-sm">
+      <div className="btn-text-wrapper">
+        <span className="btn-text">
+          {text} ↗
+        </span>
+        <span className="btn-text">
+          {text} ↗
+        </span>
+      </div>
     </button>
   );
 };
 
-/* ================= SERVICE ITEM ================= */
-
-const ServiceItem = ({ item }) => {
-  const [hovered, setHovered] = useState(false);
-
+const FeaturedServicePill = ({ title, image }) => {
   return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="
-        relative
-        overflow-hidden
-        rounded-[999px]
-        min-h-[92px]
-        cursor-pointer
-        transition-all
-        duration-700
-        ease-out
-      "
-    >
-      {/* BG IMAGE */}
-
-      <div
-        className={`
-          absolute
-          inset-0
-          transition-all
-          duration-700
-          ease-out
-          ${
-            hovered
-              ? "opacity-100 scale-100"
-              : "opacity-0 scale-105"
-          }
-        `}
-      >
-        <img
-          src={item.image}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
-      </div>
-
-      {/* CONTENT */}
-
-      <div
-        className="
-          relative
-          z-10
-          flex
-          items-center
-          px-8
-          py-6
-        "
-      >
-        {/* ICON */}
-
-        <div
-          className={`
-            overflow-hidden
-            transition-all
-            duration-700
-            ease-out
-            flex
-            items-center
-            justify-center
-            ${
-              hovered
-                ? "w-[58px] mr-4 opacity-100"
-                : "w-0 mr-0 opacity-0"
-            }
-          `}
-        >
-          <div
-            className="
-              w-[52px]
-              h-[52px]
-              rounded-full
-              bg-white/95
-              backdrop-blur-md
-              flex
-              items-center
-              justify-center
-            "
-          >
-            <FiArrowUpRight className="text-black text-[22px]" />
-          </div>
-        </div>
-
-        {/* TITLE */}
-
-        <h3
-          className={`
-            text-[34px] md:text-[44px]
-            leading-[0.92]
-            tracking-[-2px]
-            font-medium
-            transition-all
-            duration-700
-            ease-out
-            ${
-              hovered
-                ? "text-white"
-                : "text-black"
-            }
-          `}
-        >
-          {item.title}
+    <div className="relative w-full h-[80px] md:h-[100px] rounded-full overflow-hidden flex items-center px-6 md:px-10 group cursor-pointer">
+      <img 
+        src={image} 
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+        alt={title} 
+      />
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-500"></div>
+      
+      <div className="relative z-10 flex items-center gap-4 md:gap-5">
+        <FiArrowUpRight className="text-white text-[28px] md:text-[36px]" />
+        <h3 className="text-white text-[32px] md:text-[44px] font-medium tracking-[-1px] md:tracking-[-2px] leading-none mt-1">
+          {title}
         </h3>
       </div>
     </div>
   );
 };
 
-/* ================= MAIN COMPONENT ================= */
+const TextServiceLink = ({ title }) => {
+  return (
+    <div className="w-full h-[80px] md:h-[100px] flex items-center group cursor-pointer relative overflow-hidden">
+      <h3 className="text-black text-[32px] md:text-[44px] font-medium tracking-[-1px] md:tracking-[-2px] leading-none transition-transform duration-500 ease-out group-hover:translate-x-6 mt-1">
+        {title}
+      </h3>
+    </div>
+  );
+};
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-[#f5f5f2] px-6 md:px-8 lg:px-10 py-16">
-      
-      {/* TOP BUTTON */}
-
-      <div className="flex justify-center mb-16">
-        <AnimatedButton text="Explore Our Work" />
-      </div>
-
-      {/* TITLE ROW */}
-
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-0 mb-6">
+    <div className="w-full px-3 md:px-4 flex justify-center mt-8 md:mt-10">
+      <section className="bg-[#f5f5f2] rounded-[40px] px-6 md:px-16 py-16 md:py-24 w-full max-w-[1440px] mx-auto relative flex flex-col">
         
-        {/* LEFT */}
+        <div className="flex justify-center mb-16 md:mb-24">
+          <AnimatedButton text="Explore Our Work" />
+        </div>
 
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-12 md:mb-16">
+          <div className="flex items-center gap-3 md:gap-5 flex-wrap">
+            <h2 className="text-[52px] md:text-[88px] leading-[0.9] font-medium tracking-[-3px] md:tracking-[-5px] text-black">
+              Our
+            </h2>
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=400&auto=format&fit=crop"
+              alt="Team working"
+              className="w-[60px] h-[60px] md:w-[88px] md:h-[88px] rounded-[16px] md:rounded-[24px] object-cover"
+            />
+            <h2 className="text-[52px] md:text-[88px] leading-[0.9] font-medium tracking-[-3px] md:tracking-[-5px] text-black">
+              Services
+            </h2>
+          </div>
 
-          <h2
-            className="
-              text-[52px] md:text-[82px]
-              leading-[0.9]
-              font-semibold
-              tracking-[-3px] md:tracking-[-5px]
-              text-black
-            "
-          >
-            Our
-          </h2>
+          <div className="hidden lg:block">
+            <AnimatedButton text="View All Services" />
+          </div>
+        </div>
 
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
-            alt=""
-            className="
-              w-[52px] h-[52px]
-              md:w-[82px] md:h-[82px]
-              rounded-[14px] md:rounded-[20px]
-              object-cover
-            "
-          />
+        <div className="w-full h-[1px] bg-black/10 mb-8 md:mb-12" />
 
-          <h2
-            className="
-              text-[52px] md:text-[82px]
-              leading-[0.9]
-              font-semibold
-              tracking-[-3px] md:tracking-[-5px]
-              text-black
-            "
-          >
-            Services
-          </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-0">
+          <div className="flex flex-col">
+            <FeaturedServicePill 
+              title="Digital PR" 
+              image="https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop" 
+            />
+            <div className="w-full h-[1px] bg-transparent" /> 
+            
+            <TextServiceLink title="Search & Growth Strategy" />
+            <div className="w-full h-[1px] bg-black/10" />
+            
+            <TextServiceLink title="Data & Insights" />
+          </div>
+
+          <div className="flex flex-col">
+            <TextServiceLink title="Organic Social & Content" />
+            <div className="w-full h-[1px] bg-black/10" />
+            
+            <TextServiceLink title="Content Experience" />
+            <div className="w-full h-[1px] bg-black/10" />
+            
+            <TextServiceLink title="Onsite SEO" />
+          </div>
 
         </div>
 
-        {/* RIGHT BUTTON */}
-
-        <AnimatedButton text="View All Services" />
-
-      </div>
-
-      {/* LINE */}
-
-      <div className="w-full h-[1px] bg-black/5 mb-8" />
-
-      {/* SERVICES GRID */}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        
-        {/* LEFT COLUMN */}
-
-        <div className="flex flex-col gap-1">
-
-          {servicesLeft.map((item, index) => (
-            <div key={index}>
-              
-              <ServiceItem item={item} />
-
-              {index !== servicesLeft.length - 1 && (
-                <div className="w-full h-[1px] bg-black/5" />
-              )}
-
-            </div>
-          ))}
-
+        <div className="flex justify-center mt-12 lg:hidden">
+          <AnimatedButton text="View All Services" />
         </div>
 
-        {/* RIGHT COLUMN */}
-
-        <div className="flex flex-col gap-1">
-
-          {servicesRight.map((item, index) => (
-            <div key={index}>
-              
-              <ServiceItem item={item} />
-
-              {index !== servicesRight.length - 1 && (
-                <div className="w-full h-[1px] bg-black/5" />
-              )}
-
-            </div>
-          ))}
-
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

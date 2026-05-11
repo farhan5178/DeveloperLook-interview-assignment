@@ -42,7 +42,6 @@ const Hero = () => {
 
     <section className="hero-section">
 
-      {/* BG IMAGE */}
       <div
         className="hero-bg"
         style={{
@@ -50,13 +49,10 @@ const Hero = () => {
         }}
       />
 
-      {/* OVERLAY */}
       <div className="hero-overlay"></div>
 
-      {/* CONTENT */}
       <div className="hero-content">
 
-        {/* AWARDS */}
      <div className="hero-awards">
 
   <p>#1 MOST RECOMMENDED</p>
@@ -91,7 +87,6 @@ const Hero = () => {
 
 </div>
 
-        {/* TITLE */}
         <div className="hero-title">
 
           <h1>We Create</h1>
@@ -113,14 +108,12 @@ const Hero = () => {
 
         </div>
 
-        {/* SUBTEXT */}
         <p className="hero-subtext">
           on every searchable platform
         </p>
 
       </div>
 
-      {/* BOTTOM */}
       <div className="hero-bottom">
 
         <p className="hero-description-text">

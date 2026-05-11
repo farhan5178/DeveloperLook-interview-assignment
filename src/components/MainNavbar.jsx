@@ -27,15 +27,12 @@ const MainNavbar = ({ setMenuOpen }) => {
   return (
     <header className="main-navbar ">
 
-      {/* LOGO */}
       <div className="logo">
         Rise at Seven<span>®</span>
       </div>
 
-      {/* NAV LINKS */}
       <nav className="nav-links">
 
-        {/* SERVICES */}
         <div
           className="nav-item"
           onMouseEnter={() => handleMouseEnter("services", "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop")}
@@ -209,7 +206,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
         </div>
 
-        {/* INDUSTRIES */}
         <div
           className="nav-item"
           onMouseEnter={() => handleMouseEnter("industries", "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop")}
@@ -255,7 +251,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
         </div>
 
-        {/* INTERNATIONAL */}
         <div
           className="nav-item"
           onMouseEnter={() => handleMouseEnter("international", "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop")}
@@ -343,7 +338,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
         </div>
 
-        {/* ABOUT */}
         <div
           className="nav-item"
           onMouseEnter={() => handleMouseEnter("about", "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop")}
@@ -438,7 +432,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
         <a href="/">Careers</a>
 
-        {/* BLOG */}
         <div
           className="nav-item"
           onMouseEnter={() => handleMouseEnter("blog", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop")}
@@ -515,7 +508,6 @@ const MainNavbar = ({ setMenuOpen }) => {
         <a href="/">Webinar</a>
 
       </nav>
-      {/* MOBILE MENU BUTTON */}
 
 <button
   className="mobile-menu-btn"
@@ -527,7 +519,6 @@ const MainNavbar = ({ setMenuOpen }) => {
 
 </button>
 
-      {/* CONTACT BUTTON */}
       <button className="contact-btn">
 
         <div className="btn-text-wrapper">
