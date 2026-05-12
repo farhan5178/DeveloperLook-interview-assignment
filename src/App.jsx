@@ -12,6 +12,7 @@ import ServicesSection from "./components/ServicesSection";
 import WhatsNew from "./components/WhatsNew";
 import ReadyToRise from "./components/ReadyToRise";
 import Footer from "./components/Footer";
+import PremiumChangingConsumersHeader from "./components/PremiumChangingConsumersHeader";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <BrandSection />
       <FeaturedWork />
       <ServicesSection />
+      <PremiumChangingConsumersHeader />
       <WhatsNew />
       <ReadyToRise></ReadyToRise>
       <Footer />

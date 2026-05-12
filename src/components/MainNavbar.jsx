@@ -1,6 +1,6 @@
-import "../styles/navbar.css";
-import { useState, useRef } from "react";
 
+import { useState, useRef } from "react";
+import "../styles/navbar.css";
 const MainNavbar = ({ setMenuOpen }) => {
 
   const [activeMenu, setActiveMenu] = useState(null);
@@ -25,10 +25,10 @@ const MainNavbar = ({ setMenuOpen }) => {
   );
 
   return (
-    <header className="main-navbar ">
+    <header className="main-navbar">
 
       <div className="logo">
-        Rise at Seven<span>®</span>
+        Rise at Seven<span className="text-[14px] align-top">®</span>
       </div>
 
       <nav className="nav-links">
@@ -425,9 +425,9 @@ const MainNavbar = ({ setMenuOpen }) => {
 
         </div>
 
-        <a href="/" className="work-link">
+        <a href="/" className="relative">
           Work
-          <span className="badge">25</span>
+          <span className="absolute top-[-10px] right-[-16px] w-[16px] h-[16px] rounded-full bg-[#B8FFE7] flex items-center justify-center text-[9px] font-bold text-[#111]">25</span>
         </a>
 
         <a href="/">Careers</a>

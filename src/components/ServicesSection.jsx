@@ -57,9 +57,8 @@ const ServiceItem = ({ item, isActive, onActivate }) => {
     <motion.div
       layout
       onMouseEnter={onActivate}
-      className={`relative w-full overflow-hidden flex items-center group cursor-pointer ${
-        isActive ? "h-[80px] md:h-[100px] rounded-full px-6 md:px-10" : "h-[80px] md:h-[100px]"
-      }`}
+      className={`relative w-full overflow-hidden flex items-center group cursor-pointer ${isActive ? "h-[80px] md:h-[100px] rounded-full px-6 md:px-10" : "h-[80px] md:h-[100px]"
+        }`}
       transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
     >
       <AnimatePresence>
@@ -71,10 +70,10 @@ const ServiceItem = ({ item, isActive, onActivate }) => {
             transition={{ duration: 0.3 }}
             className="absolute inset-0 z-0 rounded-full overflow-hidden"
           >
-            <img 
-              src={item.image} 
-              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
-              alt={item.title} 
+            <img
+              src={item.image}
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              alt={item.title}
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-500"></div>
           </motion.div>
@@ -94,12 +93,12 @@ const ServiceItem = ({ item, isActive, onActivate }) => {
             </motion.div>
           )}
         </AnimatePresence>
-        
-        <motion.h3 
+
+        <motion.h3
           layout
           className={`font-semibold leading-none mt-1 transition-all duration-500 ease-out 
-            ${isActive 
-              ? "text-white text-[32px] md:text-[44px] tracking-[-1px] md:tracking-[-2px]" 
+            ${isActive
+              ? "text-white text-[32px] md:text-[44px] tracking-[-1px] md:tracking-[-2px]"
               : "text-black text-[32px] md:text-[44px] tracking-[-1px] md:tracking-[-2px] group-hover:translate-x-6 opacity-90 group-hover:opacity-100"
             }
           `}
@@ -117,7 +116,7 @@ const ServicesSection = () => {
   return (
     <div className="w-full px-3 md:px-4 flex justify-center -mt-[6px]">
       <section className="bg-[#f5f5f2] rounded-[40px] px-6 md:px-16 py-16 md:py-24 w-full max-w-[1440px] mx-auto relative flex flex-col z-10">
-        
+
         <div className="flex justify-center mb-16 md:mb-24">
           <AnimatedButton text="Explore Our Work" />
         </div>
@@ -148,10 +147,10 @@ const ServicesSection = () => {
           <div className="flex flex-col">
             {serviceItemsList.filter(item => item.col === 1).map((item, index) => (
               <div key={item.id} className="w-full">
-                <ServiceItem 
-                  item={item} 
-                  isActive={activeIndex === item.id} 
-                  onActivate={() => setActiveIndex(item.id)} 
+                <ServiceItem
+                  item={item}
+                  isActive={activeIndex === item.id}
+                  onActivate={() => setActiveIndex(item.id)}
                 />
                 {index < 2 && <div className="w-full h-[1px] bg-black/5" />}
               </div>
@@ -161,10 +160,10 @@ const ServicesSection = () => {
           <div className="flex flex-col">
             {serviceItemsList.filter(item => item.col === 2).map((item, index) => (
               <div key={item.id} className="w-full">
-                <ServiceItem 
-                  item={item} 
-                  isActive={activeIndex === item.id} 
-                  onActivate={() => setActiveIndex(item.id)} 
+                <ServiceItem
+                  item={item}
+                  isActive={activeIndex === item.id}
+                  onActivate={() => setActiveIndex(item.id)}
                 />
                 {index < 2 && <div className="w-full h-[1px] bg-black/5" />}
               </div>
