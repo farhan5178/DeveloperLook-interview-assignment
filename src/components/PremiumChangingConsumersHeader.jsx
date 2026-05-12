@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const PremiumChangingConsumersHeader = () => {
     return (
-        <section className="w-full py-20 sm:py-28 md:py-36 overflow-hidden mt-24 md:mt-36 mb-24 md:mb-32">
+        <section id="premium" className="w-full py-20 sm:py-28 md:py-36 overflow-hidden mt-24 md:mt-36 mb-24 md:mb-32">
             <div className="relative overflow-hidden whitespace-nowrap">
                 <motion.div
                     animate={{ x: ["0%", "-50%"] }}

@@ -114,7 +114,7 @@ const ServicesSection = () => {
   const [activeIndex, setActiveIndex] = useState("pr");
 
   return (
-    <div className="w-full px-3 md:px-4 flex justify-center -mt-[6px]">
+    <div id="service" className="w-full px-3 md:px-4 flex justify-center -mt-[6px]">
       <section className="bg-[#f5f5f2] rounded-[40px] px-6 md:px-16 py-16 md:py-24 w-full max-w-[1440px] mx-auto relative flex flex-col z-10">
 
         <div className="flex justify-center mb-16 md:mb-24">
@@ -123,7 +123,7 @@ const ServicesSection = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-12 md:mb-16">
           <div className="flex items-center gap-3 md:gap-4 flex-wrap">
-            <h2 className="text-[56px] md:text-[96px] leading-[0.85] font-bold tracking-[-3px] md:tracking-[-5px] text-black">
+            <h2 className="text-[50px] md:text-[70px] leading-[0.85] font-bold tracking-[-3px] md:tracking-[-5px] text-black">
               Our
             </h2>
             <img
@@ -131,7 +131,7 @@ const ServicesSection = () => {
               alt="Team working"
               className="w-[64px] h-[64px] md:w-[92px] md:h-[92px] rounded-[16px] md:rounded-[24px] object-cover border border-black/5 shadow-sm mt-2"
             />
-            <h2 className="text-[56px] md:text-[96px] leading-[0.85] font-bold tracking-[-3px] md:tracking-[-5px] text-black">
+            <h2 className="text-[56px] md:text-[70px] leading-[0.85] font-bold tracking-[-3px] md:tracking-[-5px] text-black">
               Services
             </h2>
           </div>

@@ -49,7 +49,7 @@ const WhatsNew = () => {
 
   return (
 
-    <section className="w-full bg-[#f5f5f2] px-7 md:px-10 py-24 overflow-hidden">
+    <section id="whats-new" className="w-full bg-[#f5f5f2] px-7 md:px-10 py-24 overflow-hidden">
 
       {/* TOP ROW */}
 

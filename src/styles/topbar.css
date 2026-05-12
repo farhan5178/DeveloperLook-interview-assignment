@@ -66,3 +66,14 @@
 .announcement-bar:hover .announcement-second{
   transform:translateY(-100%);
 }
+/* extra */
+
+#whats-new,footer{
+  margin-top: 100px;
+}
+#premium{
+  margin-top: 100px;
+}
+#service{
+  margin-top: 100px;
+}

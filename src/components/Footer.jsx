@@ -3,7 +3,7 @@ import { FaYoutube, FaTiktok, FaInstagram } from 'react-icons/fa6';
 
 const RiseFooter = () => {
   return (
-    <footer className="bg-[#111111] text-white px-6 md:px-10 pt-16 pb-6 rounded-t-[34px] font-sans mx-2 md:mx-4 mb-2 md:mb-4">
+    <footer id='footer' className=" mt-10 bg-[#111111] text-white px-6 md:px-10 pt-16 pb-6 rounded-t-[34px] font-sans mx-2 md:mx-4 mb-2 md:mb-4" >
       <div className="max-w-[1500px] mx-auto">
 
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
